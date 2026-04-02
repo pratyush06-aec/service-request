@@ -1,5 +1,9 @@
 # Stellar Soroban Service Request System
 
+<p align="center">
+  <img src="./my-stellar-app/src/assets/logo.png" width="300" alt="Service Request Logo">
+</p>
+
 ![Stellar](https://img.shields.io/badge/Stellar-Soroban-black?style=for-the-badge&logo=stellar) ![React](https://img.shields.io/badge/React-18.2-blue?style=for-the-badge&logo=react) ![Vite](https://img.shields.io/badge/Vite-5.0-purple?style=for-the-badge&logo=vite) ![GSAP](https://img.shields.io/badge/GSAP-3.12-88CE02?style=for-the-badge&logo=greensock)
 
 A next-generation decentralized application (dApp) built on the Stellar network using Soroban Smart Contracts. This interface enables users to seamlessly create work orders, accept and submit deliverables, and manage final on-chain approvals with zero centralized infrastructure.

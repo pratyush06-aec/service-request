@@ -8,6 +8,17 @@
 
 A next-generation decentralized application (dApp) built on the Stellar network using Soroban Smart Contracts. This interface enables users to seamlessly create work orders, accept and submit deliverables, and manage final on-chain approvals with zero centralized infrastructure.
 
+## 📸 Visual Tour
+
+### Application Flow & Demonstration
+![Demo Recording](./assets/demo_recording.webp)
+
+### Landing Page
+![Landing Page](./assets/landing_page.png)
+
+### Main Dashboard & Request Creation
+![Main Dashboard](./assets/dashboard_main.png)
+
 ## 🌟 Key Features
 
 - **Decentralized Service Escrow**: Create non-custodial work requests with an attached XLM/Stroops budget safely locked by the smart contract.

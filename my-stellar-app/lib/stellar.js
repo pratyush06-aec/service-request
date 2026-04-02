@@ -57,7 +57,19 @@ const invokeWrite = async (method, args = []) => {
         .setTimeout(30)
         .build();
 
-    tx = await server.prepareTransaction(tx);
+    try {
+        tx = await server.prepareTransaction(tx);
+    } catch (e) {
+        let msg = e?.message || String(e);
+        if (msg.includes("Error(Contract, #6)")) {
+            throw new Error("❌ Validation Error: A Request with this ID already exists. Please use a different Request ID.");
+        }
+        if (msg.includes("Error(Contract, #")) {
+            const match = msg.match(/Error\(Contract, #(\d+)\)/);
+            throw new Error(`❌ Contract Validation Failed: Custom Error Code #${match ? match[1] : 'Unknown'}.`);
+        }
+        throw e;
+    }
 
     const signed = await signTransaction(tx.toXDR(), { networkPassphrase: NETWORK_PASSPHRASE });
     if (!signed || signed.error) throw new Error(signed?.error || "Transaction signing failed");
@@ -88,7 +100,15 @@ const invokeRead = async (method, args = []) => {
         return scValToNative(sim.result.retval);
     }
 
-    throw new Error(sim.error || `Read simulation failed: ${method}`);
+    let msg = sim.error || `Read simulation failed: ${method}`;
+    if (msg.includes("Error(Contract, #4)")) {
+        throw new Error("❌ Validation Error: Request ID not found in the Smart Contract.");
+    }
+    if (msg.includes("Error(Contract, #")) {
+        const match = msg.match(/Error\(Contract, #(\d+)\)/);
+        throw new Error(`❌ Contract Validation Failed: Custom Error Code #${match ? match[1] : 'Unknown'}.`);
+    }
+    throw new Error(msg);
 };
 
 export const createRequest = async (payload) => {

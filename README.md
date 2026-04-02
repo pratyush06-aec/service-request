@@ -63,7 +63,7 @@ This runs the Vite compiler to produce hyper-optimized, minified vanilla assets 
 
 ## 🏗 System Architecture
 
-![System Architecture Diagram](./my-stellar-app/src/assets/diagram-export-2-4-2026-11_59_10-pm.png)
+<img src="./my-stellar-app/src/assets/diagram-export-2-4-2026-11_59_10-pm.png" height="1000" width="90%" alt="system architecture logo">
 
 Our dApp follows a perfectly decoupled, 5-layer decentralized architecture:
 

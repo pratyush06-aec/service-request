@@ -8,6 +8,8 @@
 
 A next-generation decentralized application (dApp) built on the Stellar network using Soroban Smart Contracts. This interface enables users to seamlessly create work orders, accept and submit deliverables, and manage final on-chain approvals with zero centralized infrastructure.
 
+CONTRACT_ID = "CCBJ3A4NVK3IAUR2C36F2LKMC7A5QFSAARE6ZY2ZB7TFJDM7FQ4WCWQF"
+
 ## 📸 Visual Tour
 
 ### Application Flow & Demonstration
